@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            随机段子
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="joke">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+       <ion-refresher-content pullingText="正在刷新数据......">
+       </ion-refresher-content>
+     </ion-refresher>
+
+     <ion-card *ngFor='let textContent of textItem '>
+         <ion-card-content>
+             <p class="textContent">{{textContent.content}}</p>
+         </ion-card-content>
+     </ion-card>
+</ion-content>

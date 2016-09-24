@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>分享好玩的段子</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="home">
+    <ion-card *ngFor='let textContent of textItem '>
+        <ion-card-content overflow-scroll='true'>
+            <p class="textContent selectable">{{textContent.content}}</p>
+            <p class="updatetime">{{textContent.updatetime}}</p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,26 @@
+.home {
+}
+.updatetime{
+	text-align: right;
+	color: #ccc;
+}
+[padding] scroll-content {
+  padding: 0;
+}
+.textContent{
+	padding-top: 10px;
+	text-indent: 20px;
+	font-size:1.6rem;
+}
+.selectable {
+  -webkit-user-select: auto;//控制网页内容选择范围
+}
+ion-content{
+  overflow-scroll: true;
+}
+.scroll-content {
+  -webkit-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;
+}
