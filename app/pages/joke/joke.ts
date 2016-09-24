@@ -9,19 +9,18 @@ export class JokePage {
  	key;
  	textContet;
  	textItem;
-   	constructor(public navCtrl: NavController,private http: Http,
-   		private toastCtrl: ToastController) {
+   index;
+	constructor(public navCtrl: NavController,private http: Http,
+		private toastCtrl: ToastController) {
 
-   		this.navCtrl = navCtrl;
-   		this.key = "df9dd54f46be6ad558f4bba85879df46";
-   		this.textContet = '';
-   		this.textItem;
-   	}
-
-   
+		this.navCtrl = navCtrl;
+		this.key = "df9dd54f46be6ad558f4bba85879df46";
+		this.textContet = '';
+		this.textItem;
+      this.index = 0;
+	}
 
    getDate(){
-
       this.http.get('http://v.juhe.cn/joke/randJoke.php?key='+
           this.key).subscribe(data=>{
 
@@ -43,7 +42,12 @@ export class JokePage {
    //载入页面时发送请求
    //随时更新的笑话接口
    onPageDidEnter() {
-      this.getDate();
+      console.log(this.index);
+      this.index +=1;
+      if(this.index==1) {
+         this.getDate();
+      }
+   
     }
    doRefresh(refresher) {
       //刷新数据

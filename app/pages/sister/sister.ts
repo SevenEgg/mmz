@@ -8,9 +8,11 @@ import { Http } from '@angular/http';
 export class sisterPage {
   ts;
 	tt;
+  index;
   constructor(public navCtrl: NavController,private http: Http) {
   	this.ts = [];
   	this.tt = {};
+    this.index = 0;
   }
 
   getDate(){
@@ -29,8 +31,13 @@ export class sisterPage {
   }
 
   //载入完页面时触发请求
-  onPageDidEnter(){
-  	this.getDate();
+  onPageDidEnter() {
+    console.log(this.index);
+    this.index +=1;
+    if(this.index==1) {
+        this.getDate();
+    }
+  
   }
 
   doRefresh(refresher) {

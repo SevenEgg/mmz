@@ -9,6 +9,7 @@ export class AboutPage {
  	key;
  	textContet;
  	textItem;
+  index;
    constructor(public navCtrl: NavController,private http: Http,
 		private toastCtrl: ToastController) {
 
@@ -16,6 +17,7 @@ export class AboutPage {
 		this.key = "df9dd54f46be6ad558f4bba85879df46";
 		this.textContet = '';
 		this.textItem;
+    this.index = 0;
 	}
 
    getDate(){
@@ -40,15 +42,19 @@ export class AboutPage {
 	//载入页面时发送请求
 	//随时更新的笑话接口
 	onPageDidEnter() {
-		   this.getDate();
-	   }
+    console.log(this.index);
+    this.index +=1;
+    if(this.index==1) {
+        this.getDate();
+    }
+  }
 
-   doRefresh(refresher) {
-      //刷新数据
-      this.getDate();
+  doRefresh(refresher) {
+    //刷新数据
+    this.getDate();
 
-      setTimeout(() => {
-         refresher.complete();
-      }, 1000);
-   }
+    setTimeout(() => {
+      refresher.complete();
+    }, 1000);
+  }
 }
