@@ -6,7 +6,7 @@
 <ion-content padding class="home">
     <ion-card *ngFor='let textContent of textItem '>
         <ion-card-content overflow-scroll='true'>
-            <p class="textContent selectable">{{textContent.content}}</p>
+            <p class="textContent selectable" innerHTML = {{textContent.content}}></p>
             <p class="updatetime">{{textContent.updatetime}}</p>
         </ion-card-content>
     </ion-card>

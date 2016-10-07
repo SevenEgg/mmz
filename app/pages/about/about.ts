@@ -14,7 +14,7 @@ export class AboutPage {
 		private toastCtrl: ToastController) {
 
 		this.navCtrl = navCtrl;
-		this.key = "";
+		this.key = "df9dd54f46be6ad558f4bba85879df46";
 		this.textContet = '';
 		this.textItem;
     this.index = 0;
