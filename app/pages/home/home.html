@@ -4,6 +4,11 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding class="home">
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+       <ion-refresher-content pullingText="正在刷新数据......">
+       </ion-refresher-content>
+     </ion-refresher>
+     
     <ion-card *ngFor='let textContent of textItem '>
         <ion-card-content overflow-scroll='true'>
             <p class="textContent selectable" innerHTML = {{textContent.content}}></p>
